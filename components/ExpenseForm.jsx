@@ -7,6 +7,9 @@ const ExpenseForm= ({ onAddExpense}) => {
         Amount: '',
         Date: ''
     });
+    const hanleChange = (e) => {
+        setForm ({...form, [e.target.name]: e.target.value});
+    };
 }
 
 
