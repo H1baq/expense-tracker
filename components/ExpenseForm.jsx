@@ -2,10 +2,10 @@ import React, {useState} from "react";
 const ExpenseForm= ({ onAddExpense}) => {
     const [form,setForm]=useState({
         name: '',
-        Description: '',
-        Category: '',
-        Amount: '',
-        Date: ''
+        description: '',
+        category: '',
+        amount: '',
+        date: ''
     });
     const handleChange = (e) => {
         setForm ({...form, [e.target.name]: e.target.value});
@@ -17,7 +17,7 @@ const ExpenseForm= ({ onAddExpense}) => {
             id: Date.now()
         };
         onAddExpense(newExpense);
-        setForm({ name:'', Description:'', Category: '', Date:''});
+        setForm({ name:'', description:'', category: '', date:''});
     };
     return (
         <form onSubmit={handleSubmit}>

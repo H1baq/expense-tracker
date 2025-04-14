@@ -13,7 +13,8 @@ const ExpenseTable = ({ expenses}) => {
             </thead>
             <tbody>
                 {expenses.map((expense) => (
-                    <tr key={expense.name}>
+                    <tr key={expense.id}>
+                        <td>{expense.name}</td>
                         <td>{expense.description}</td>
                         <td>{expense.category}</td>
                         <td>{expense.amount}</td>
