@@ -7,10 +7,21 @@ const ExpenseForm= ({ onAddExpense}) => {
         Amount: '',
         Date: ''
     });
-    const hanleChange = (e) => {
+    const handleChange = (e) => {
         setForm ({...form, [e.target.name]: e.target.value});
     };
+    const  handleSubmit = (e) => {
+        e.preventDefault();
+        const newExpense = {
+            ...form,
+            id: Date.now()
+        };
+        onAddExpense(newExpense);
+        setForm({ name:'', Description:'', Category: '', Date:''});
+    };
+    
 }
+
 
 
 
