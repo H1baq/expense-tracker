@@ -5,7 +5,7 @@ const ExpenseForm= ({ onAddExpense}) => {
         description: '',
         category: '',
         amount: '',
-        date: ''
+        date: '',
     });
     const handleChange = (e) => {
         setForm ({...form, [e.target.name]: e.target.value});
@@ -17,15 +17,15 @@ const ExpenseForm= ({ onAddExpense}) => {
             id: Date.now()
         };
         onAddExpense(newExpense);
-        setForm({ name:'', description:'', category: '', date:''});
-    };
+        setForm({ name:'', description:'', amount: '', category: '', date:''});
+    }; 
     return (
         <form onSubmit={handleSubmit}>
             <input name= "name" value={form.name} onChange={handleChange} placeholder="Expense Name" required/>
-            <input name= "description" value={form.Description} onChange={handleChange} placeholder="Description" required/>
-            <input name= "category" value={form.Category} onChange={handleChange} placeholder="Category" required/>
-            <input name= "amount" value={form.Amount} onChange={handleChange} type= "number" placeholder="Amount"/>
-            <input name= "date" value={form.Date} onChange={handleChange} type="date" placeholder="Date" />
+            <input name= "description" value={form.description} onChange={handleChange} placeholder="Description" required/>
+            <input name= "category" value={form.category} onChange={handleChange} placeholder="Category" required/>
+            <input name= "amount" value={form.amount} onChange={handleChange} type= "number" placeholder="Amount"/>
+            <input name= "date" value={form.date} onChange={handleChange} type="date" placeholder="Date" />
             <button type="submit">Submit</button>
         </form>
     );
